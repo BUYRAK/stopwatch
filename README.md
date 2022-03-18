@@ -13,5 +13,5 @@ It is a project that beginners can refer to.
 <hr>
 <div style="float:center">
   <h4> In app images </h4>
-<img width="30%" src="https://github.com/BUYRAK/stopwatch/blob/master/assets/app-ss.png">
+<img width="100%" src="https://github.com/BUYRAK/stopwatch/blob/master/assets/app-ss.png">
 <div>
