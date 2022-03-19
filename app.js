@@ -47,44 +47,7 @@ window.onload = function (){
         }
     })
 
-    split.onclick = (() => {
-       if (tourSecond !== '0'){
-           clearInterval(interval)
-           clearInterval(intervalTour)
-           if (click === false){
-               interval = setInterval(startTimer,10)
-               intervalTour = setInterval(tourTimer,10)
-           }
-           tour_id++
-           let table = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-           let row = table.insertRow(0)
-           let cell1 = row.insertCell(0)
-           let cell2 = row.insertCell(1)
-           let cell3 = row.insertCell(2)
 
-           cell1.innerHTML = '#' + tour_id
-           cell2.innerHTML =
-               (tourHour >= '10' ? tourHour + ':' : '0' + tourHour + ':') +
-               (tourMinute >= '10' ? tourMinute + ':' : '0' + tourMinute + ':') +
-               (tourSecond >= '10' ? tourSecond + ':' : '0' + tourSecond + ':') +
-               (tourMinSecond >= '10' ? tourMinSecond : '0' + tourMinSecond)
-           cell3.innerHTML =
-               (hour >= '10' ? hour + ':' : '0' + hour + ':') +
-               (minute >= '10' ? minute + ':' : '0' + minute + ':') +
-               (second >= '10' ? second + ':' : '0' + second + ':') +
-               (minsecond >= '10' ? minsecond : '0' + minsecond)
-
-           tourHour = '0'
-           tourMinute = '0'
-           tourSecond = '0'
-           tourMinSecond = '0'
-           hourTourFront.innerHTML = '0' + tourHour
-           minuteTourFront.innerHTML = '0' + tourMinute
-           secondTourFront.innerHTML = '0' + tourSecond
-           minsecondTourFront.innerHTML = '0' + tourMinSecond
-
-       }
-    })
 
     reset.onclick = function (){
         clearInterval(interval)
