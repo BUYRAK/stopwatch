@@ -9,25 +9,26 @@ window.onload = function (){
     let minuteFront = document.getElementById('minute')
     let secondFront = document.getElementById('second')
     let minsecondFront = document.getElementById('minsecond')
-    let start = document.getElementById('start')
+    let action = document.getElementById('action')
     let split = document.getElementById('split')
-    let stop = document.getElementById('stop')
     let reset = document.getElementById('reset')
+    let click = true
 
     let interval
 
-    start.onclick = (() => {
-        clearInterval(interval)
-        interval = setInterval(startTimer,10)
-        document.getElementById('start').innerHTML = '<i class="bi bi-pause"></i> Stop'
-        document.getElementById('start').id = 'stop'
+    action.onclick = (() => {
+        if (click === true){
+            clearInterval(interval)
+            interval = setInterval(startTimer,10)
+            document.getElementById('action').innerHTML = '<i class="bi bi-pause"></i> Stop'
+            click = false
+        }else{
+            clearInterval(interval)
+            document.getElementById('action').innerHTML = '<i class="bi bi-alarm"></i> Start'
+            click = true
+        }
     })
 
-    stop.onclick = function (){
-        clearInterval(interval)
-        document.getElementById('stop').innerHTML = '<i class="bi bi-timer"></i> Start'
-        document.getElementById('stop').id = 'start'
-    }
     reset.onclick = function (){
         clearInterval(interval)
         hour = '0'
